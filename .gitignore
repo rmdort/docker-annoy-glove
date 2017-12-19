@@ -1,0 +1,6 @@
+embeddings.ann
+vocab.json
+.env
+.vscode
+.DS_Store
+__pycache__

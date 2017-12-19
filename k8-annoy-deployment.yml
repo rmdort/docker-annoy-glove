@@ -1,0 +1,37 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: annoy-service-en
+spec:
+  selector:
+    app: annoy
+    lang: en
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: annoy-en-port
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: annoy-deployment-en
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: annoy
+        tier: backend
+        lang: en
+    spec:
+      containers:
+      - name: annoy
+        image: registry.gitlab.com/olasearch/annoy_server:v1
+        ports:
+        - name: annoy-en-port
+          containerPort: 9033
