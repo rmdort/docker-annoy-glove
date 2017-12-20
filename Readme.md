@@ -6,6 +6,12 @@ More info about annoy - https://github.com/spotify/annoy
 
 Annoy (Approximate Nearest Neighbors Oh Yeah) is a C++ library with Python bindings to search for points in space that are close to a given query point. It also creates large read-only file-based data structures that are mmapped into memory so that many processes may share the same data.
 
+## Docker image
+
+````
+docker run -p 127.0.0.1:9033:9033 olasearch/annoy_server:latest
+````
+
 ## Deploy in kuberentes
 
 ````
