@@ -14,7 +14,7 @@ class EmbeddingServer(RPCServer):
 
 def serve ():
   logging.info('Creating server')
-  server = StreamServer(('127.0.0.1', 9033), EmbeddingServer())
+  server = StreamServer(('0.0.0.0', 9033), EmbeddingServer())
 
   logging.info('Done. Serving forever')
   server.serve_forever()

@@ -31,7 +31,12 @@ spec:
     spec:
       containers:
       - name: annoy
-        image: registry.gitlab.com/olasearch/annoy_server:v1
+        image: registry.gitlab.com/olasearch/annoy_server:v3
+        resources:
+          limits: 
+            memory: '200M'
+          requests:
+            memory: '120M'
         ports:
         - name: annoy-en-port
           containerPort: 9033

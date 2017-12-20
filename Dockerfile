@@ -7,5 +7,5 @@ COPY . /app
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 WORKDIR /app
-
+EXPOSE 9033
 ENTRYPOINT ["sh", "entrypoint.sh"]
