@@ -19,9 +19,9 @@ index.load(os.path.join(os.path.dirname(__file__), 'embeddings.ann'))
 # If it doesnt exist in the vocab, outputs zero vectors
 def get_embedding(x):
   # Lowercase word
-	x = x.lower()
-	if x in vocab:
-		idx = vocab[x]
-		return [float(e) for e in index.get_item_vector(idx)]
-	else:
-		return EMPTY_ARRAY
+  x = x.lower()
+  if x in vocab:
+    idx = vocab[x]
+    return [float(e) for e in index.get_item_vector(idx)]
+  else:
+    return EMPTY_ARRAY
