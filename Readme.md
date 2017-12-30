@@ -1,6 +1,6 @@
 # RPC Docker/Kubernetes container for glove embeddings using Annoy
 
-This is an RPC container for glove 840 billion word embeddings `glove.840B.300d.txt`. Has around 250MB memory footprint on k8.
+This is an RPC container for 400,000 of 840 billion glove word embeddings `glove.840B.300d.txt`. You can increase the rebuild the index using `build_index.ph`. Has around 250MB memory footprint on k8.
 
 More info about annoy - https://github.com/spotify/annoy
 
