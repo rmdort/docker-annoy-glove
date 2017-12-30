@@ -39,3 +39,9 @@ with client_pool.connection() as client:
     print (np.shape(word_vectors))
 ````
 
+## To add more words
+
+1. Download Glove word vectors from https://nlp.stanford.edu/projects/glove/ and place it in the directory
+2. Run `pip install -r requirements.txt`
+3. Run `python build_index.py`
+4. New files `embeddings.ann` and `vocab.json` will be created
