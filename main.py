@@ -1,16 +1,20 @@
 from gevent.server import StreamServer
 from mprpc import RPCServer
-from embeddings import get_embedding
+from embeddings import get_embedding, get_nearest
 import logging
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
 class EmbeddingServer(RPCServer):
-    def embedding(self, word):
-        if isinstance(word, (list, tuple)):
-          return [ get_embedding(w) for w in word ]
-        return get_embedding(word)
+  def embedding(self, word):
+    if isinstance(word, (list, tuple)):
+      return [ get_embedding(w) for w in word ]
+    return get_embedding(word)
+
+  def nearest(self, word, count = 10):
+    return get_nearest(word, count)
+
 
 def serve ():
   logging.info('Creating server')
